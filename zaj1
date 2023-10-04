@@ -1,3 +1,9 @@
+LITERATURA PODSTAWOWA:
+1. Niklaus Wirth, Algorytmy + struktury danych = programy, Wyd. WNT,  R. 2002
+2. Lech Banachowski, Krzysztof Marian Diks, Wojciech Rytter, Algorytmy i Struktury Danych, Wyd. WNT, R. 2001
+
+
+
 namespace WinFormsApp2
 {
     public partial class Form1 : Form
