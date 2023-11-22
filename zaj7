@@ -1,1 +1,92 @@
+using System.Collections.Generic;
+using System.Windows.Forms;
+using System;
+using System.Linq;
+using System.Globalization;
 
+namespace LAB6
+{
+   class Wezel
+    {
+        public int wartosc;
+        public List<Wezel> dzieci = new List<Wezel>();
+
+        public Wezel(int liczba)
+        {
+            this.wartosc = liczba;
+        }
+    }
+    class Wezel3
+    {
+        public int wartosc3;
+        public Wezel3 rodzic;
+        public Wezel3 lewe_dziecko;
+        public Wezel3 prawe_dziecko;
+
+        public Wezel3(int wartosc)
+        {
+            this.wartosc3 = wartosc;
+        }
+    }
+    class drzewo
+    {
+        public Wezel3 korzen;
+        public int liczba_wezkow =0;
+
+        void Add(Wezel3 w)
+        {
+            if (korzen == null)
+            {
+               
+            }
+        }
+    }
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        string napis = "";
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var w1 = new Wezel(5);
+            var w2 = new Wezel(3);
+            var w3 = new Wezel(1);
+            var w4 = new Wezel(2);
+            var w5 = new Wezel(5);
+            var w6 = new Wezel(2);
+
+            w1.dzieci.Add(w2);
+            w1.dzieci.Add(w3);
+            w1.dzieci.Add(w4);
+            w2.dzieci.Add(w5);
+            w2.dzieci.Add(w6);
+
+            odwiedzone.Clear();
+            A(w1);
+            MessageBox.Show(napis);
+        }
+
+        List<Wezel> odwiedzone = new List<Wezel>();
+        void A(Wezel w)
+        {
+            odwiedzone.Add(w);
+            napis += w.wartosc.ToString();
+
+            foreach(var dzieci in w.dzieci)
+            {
+                if (!odwiedzone.Contains(dzieci))
+                {
+                    A(dzieci);
+                }
+            }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
