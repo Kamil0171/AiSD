@@ -138,7 +138,6 @@ namespace kongopl
         {
             return this.warto.ToString();
         }
-
     }
 
     public class Węzeł3
@@ -147,10 +146,5 @@ namespace kongopl
            public List<Węzeł3> prawe = new List<Węzeł3>();
            public List<Węzeł3> lewe = new List<Węzeł3>();
            public List<Węzeł3> rodzic3 = new List<Węzeł3>();
-      
     }
-
-   //bfs zrobic
-
-   
 }
