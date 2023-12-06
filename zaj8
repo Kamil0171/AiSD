@@ -17,12 +17,10 @@ namespace zadania
         {
             InitializeComponent();
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             /*
@@ -48,14 +46,7 @@ namespace zadania
             d.Add(9);
             d.Add(6);
             d.Znajdź(5);
-
-
-
-
-
-
         }
-
         void A(Wezel w)
         {
             MessageBox.Show(w.wartosc.ToString());
@@ -76,12 +67,7 @@ namespace zadania
                 A(w.sasiedzi[i]);
             }
         }
-
-
-
-
     }
-
     class Wezel
     {
         public int wartosc;
@@ -92,7 +78,6 @@ namespace zadania
             this.wartosc = liczba;
         }
     }
-
     class Wezel2
     {
         public int wartosc;
@@ -103,7 +88,6 @@ namespace zadania
             this.wartosc = liczba;
 
         }
-
         public void Add(Wezel2 s)
         {
 
@@ -122,10 +106,7 @@ namespace zadania
                 s.sasiedzi.Add(this);
 
             }
-
-
         }
-
         public override string ToString()
         {
             return this.wartosc.ToString();
@@ -143,7 +124,6 @@ namespace zadania
         {
             this.wartosc = liczba;
         }
-
         public Wêzel3 Min()
         {
             var minWęzeł = this;
@@ -153,7 +133,6 @@ namespace zadania
             }
             return minWęzeł;
         }
-
         public Wêzel3 Max()
         {
             var maxWęzeł = this;
@@ -163,7 +142,6 @@ namespace zadania
             }
             return maxWęzeł;
         }
-
         internal void Add(int liczba)
         {
             var dziecko = new Wêzel3(liczba);
@@ -177,12 +155,7 @@ namespace zadania
                 this.prawe = dziecko;
             }
         }
-
-
-
     }
-
-
     public class DrzewoBinarne
     {
         public Wêzel3 korzeñ;
@@ -193,20 +166,15 @@ namespace zadania
             this.korzeñ = new Wêzel3(liczba);
             this.liczbaWêzlów = 1;
         }
-
         public void Add(int liczba)
         {
             Wêzel3 rodzic = this.ZnajdzRodzica(liczba);
             rodzic.Add(liczba);
-
-
         }
-
         public Wêzel3 Znajdź(int liczba)
         {
             return Znajdź(this.korzeñ, liczba);
         }
-
         private Wêzel3 Znajdź(Wêzel3 w, int liczba)
         {
             if (w == null || w.wartosc == liczba)
@@ -223,12 +191,15 @@ namespace zadania
                 return Znajdź(w.prawe, liczba);
             }
         }
-
         private Wêzel3 ZnajdzRodzica(int liczba)
         {
             var w = this.korzeñ;
             while (w != null)
             {
+                if(liczba == w.wartosc)
+                {
+                    return w;
+                }
                 if (liczba < w.wartosc)
                 {
                     if (w.lewe == null)
@@ -242,7 +213,6 @@ namespace zadania
                 }
                 else
                 {
-
                     if (w.prawe == null)
                     {
                         return w;
@@ -251,16 +221,10 @@ namespace zadania
                     {
                         w = w.prawe;
                     }
-
                 }
             }
             return null;
         }
-
-
-
-
-
         public Wêzel3 Następny(Wêzel3 w)
         {
             if (w.prawe != null)
@@ -276,14 +240,7 @@ namespace zadania
                 w = rodzic;
                 rodzic = rodzic.rodzic;
             }
-
-
             return rodzic;
         }
-
-
-
-
     }
-
 }
